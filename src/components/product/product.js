@@ -1,6 +1,7 @@
-import React , {useState} from 'react'
+import { useState } from 'react';
+import React from 'react'
 import './product.css';
-// import {useState} from 'react-router-dom';
+import ImgShopping from './../../Images/shopping.webp';
 
 export default function Product() {
     const [count, setCount] = useState(0);
@@ -9,30 +10,25 @@ export default function Product() {
         setCount(count+1)
     }
     function Decrement(){
-        setCount(count-1)
+        setCount(count-0)
     }
 
   return (
     <>
-    <div className='box-Container'>
       <div className='Product-container'>
-        <p>{count}</p>
-        <button className="btn-container" onClick={Increment}>+</button>
+      <p className='seller-container'>Best Seller</p>
+        <img className='img-container' src={ImgShopping} alt='Product' />
+        <p className='des-container'>Mool Hair Grow Oil- 
+          Best Ayurvedik
+        </p>
+        <span className='review-container'>⭐⭐⭐⭐⭐ 98 Reviews</span>
+       <p className='description'> Trusted by 1 Million+ Happy Customers</p>
+        <h2>{count}</h2> 
+        <div className="btn-container"> Quantity
+         <button className="btn-container" onClick={Increment}>+</button>
         <button className="btn-container" onClick={Decrement}>-</button>
+        </div>
       </div>
-
-      <div className='Product-container'>
-        <p>{count}</p>
-        <button className="btn-container" onClick={Increment}>+</button>
-        <button className="btn-container" onClick={Decrement}>-</button>
-      </div>
-
-      <div className='Product-container'>
-        <p>{count}</p>
-        <button className="btn-container" onClick={Increment}>+</button>
-        <button className="btn-container" onClick={Decrement}>-</button>
-      </div>
-    </div>
     </>
   )
 }
